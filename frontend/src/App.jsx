@@ -5,12 +5,10 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 
-// Back to Top Button Component
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isOverFooter, setIsOverFooter] = useState(false);
 
-  // Show button when page is scrolled down
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
