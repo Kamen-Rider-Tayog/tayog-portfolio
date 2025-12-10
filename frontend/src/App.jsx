@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';;
 import Navbar from './components/Navbar';
-import Hero from './components/Hero.jsx';
+import Hero from './components/Hero';
 import Footer from './components/Footer';
 
 // Back to Top Button Component
