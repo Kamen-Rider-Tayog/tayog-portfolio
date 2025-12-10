@@ -11,7 +11,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-[#F0EEE9] shadow-md sticky top-0 z-50 border-b border-gray-200">
+    <nav className="bg-[#F0EEE9] shadow-md sticky top-0 z-50 border-b border-gray-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
@@ -54,9 +54,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu - FIXED with z-40 */}
+        {/* Mobile Menu - ABSOLUTE POSITION (FIXED) */}
         {isMenuOpen && (
-          <div className="md:hidden bg-[#F0EEE9] border-t border-gray-200 shadow-lg z-40">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-[#F0EEE9] border-t border-gray-200 shadow-lg z-40">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <a
