@@ -49,7 +49,7 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                  <FontAwesomeIcon icon={faEnvelope} className="text-[#F7CAC9]` text-lg" />
+                  <FontAwesomeIcon icon={faEnvelope} className="text-[#F7CAC9] text-lg" />
                 </div>
                 <p className="text-white/90">basallo.tayog@gmail.com</p>
               </div>
