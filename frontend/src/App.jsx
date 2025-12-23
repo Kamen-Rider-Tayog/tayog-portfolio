@@ -4,6 +4,7 @@ import { faCaretUp } from '@fortawesome/free-solid-svg-icons';;
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
+import Snowfall from 'react-snowfall'
 
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -67,10 +68,24 @@ const BackToTopButton = () => {
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F0EEE9]">
+      <Snowfall 
+        color="#F7CAC9"  
+        snowflakeCount={200}  
+        speed={[0.5, 3]}       
+        wind={[-0.5, 5.0]}     
+        radius={[1.0, 4.0]}    
+        rotationSpeed={[-1, 1]}
+        style={{
+          position: 'fixed',
+          width: '100vw',
+          height: '100vh',
+          zIndex: 1,  
+        }}
+      />
+
       <Navbar />
       
       <main className="flex-grow">
-        {/* Hero Section */}
         <section id="home" className="scroll-mt-16">
           <Hero />
         </section>
