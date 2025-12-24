@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-4 bg-[#F0EEE9] relative overflow-hidden mt-[50px]">
+    <section className="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center px-4 bg-[#F0EEE9] relative overflow-hidden">
 
       <div className="absolute top-20 left-10 w-72 h-72 bg-[#F7CAC9]/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#169C78]/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>

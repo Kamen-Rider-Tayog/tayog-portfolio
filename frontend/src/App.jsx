@@ -4,7 +4,8 @@ import { faCaretUp } from '@fortawesome/free-solid-svg-icons';;
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
-import Snowfall from 'react-snowfall'
+import Snowfall from 'react-snowfall';
+import Skills from './components/Skills';
 
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -70,7 +71,7 @@ function App() {
     <div className="min-h-screen flex flex-col bg-[#F0EEE9]">
       <Snowfall 
         color="#F7CAC9"  
-        snowflakeCount={200}  
+        snowflakeCount={500}  
         speed={[0.5, 3]}       
         wind={[-0.5, 5.0]}     
         radius={[1.0, 4.0]}    
@@ -111,6 +112,8 @@ function App() {
                 </div>
               </div>
             </div>
+
+            
 
             <div id="projects" className="mb-16 scroll-mt-16">
               <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">

@@ -91,7 +91,8 @@ const Footer = () => {
         <div className="text-center pt-4 pb-2">
           <p className="text-white/80 text-base">
             © {currentYear} Made with 
-            <span className='inline-block transform hover:text-[#F7CAC9] hover:scale-110 transition-transform duration-200 mx-1'>❤︎</span> 
+            <span className='inline-block transform hover:text-[#F7CAC9] 
+            hover:scale-110  hover:cursor-pointer transition-transform duration-200 mx-1'>❤︎</span> 
             by Tayog
           </p>
         </div>
