@@ -70,9 +70,14 @@ img {
 
 /* Custom scrollbar for browsers that support it */
 @media (min-width: 768px) {
+  #skills ::-webkit-scrollbar {
+    display: block;
+    width: 1px;
+  }
+
   ::-webkit-scrollbar {
     display: block;
-    width: 10px;
+    width: 5px;
   }
   
   ::-webkit-scrollbar-track {

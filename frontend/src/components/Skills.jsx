@@ -13,7 +13,10 @@ import {
   faXmark,
   faCalendarAlt,
   faProjectDiagram,
-  faLightbulb
+  faLightbulb,
+  faDatabase,
+  faPalette,
+  faVideo,
 } from '@fortawesome/free-solid-svg-icons';
 
 // Brand icons
@@ -23,13 +26,17 @@ import {
   faCss3Alt,
   faJava,
   faGitAlt,
-  faFigma
+  faFigma,
+  faNodeJs,
+  faPython,
+  faPhp,
+  faDiscord,
+  faMicrosoft
 } from '@fortawesome/free-brands-svg-icons';
 
 const Skills = () => {
   const { isDarkMode } = useTheme();
   
-  // Use theme colors
   const primaryColor = isDarkMode ? '#4ECDC4' : '#169C78';
   const primaryColorClass = isDarkMode ? 'text-primary-dark' : 'text-primary-light';
   const primaryBgColor = isDarkMode ? 'bg-primary-dark' : 'bg-primary-light';
@@ -75,6 +82,15 @@ const Skills = () => {
         projects: ['Multiple Websites', 'Layouts'],
         tip: 'Expert: Grid, Flexbox, Animations'
       },
+      { 
+        name: 'Three.js', 
+        level: 3, 
+        icon: faCode,
+        description: 'Just starting to explore 3D graphics in the browser.',
+        experience: 'Just Started',
+        projects: ['Learning 3D Basics'],
+        tip: 'Begin with: Basic 3D concepts, scene setup'
+      },
     ],
     backend: [
       { 
@@ -103,6 +119,71 @@ const Skills = () => {
         experience: 'Learning',
         projects: ['API Integration Projects'],
         tip: 'Learn: HTTP Methods, Status Codes, JSON'
+      },
+      { 
+        name: 'Node.js', 
+        level: 30, 
+        icon: faNodeJs,
+        description: 'Learning Node.js for server-side JavaScript development.',
+        experience: 'Beginner',
+        projects: ['Basic APIs', 'CLI Tools'],
+        tip: 'Focus on: NPM, Express.js, File System'
+      },
+      { 
+        name: 'Python', 
+        level: 40, 
+        icon: faPython,
+        description: 'Basic Python programming for scripting and automation.',
+        experience: 'Beginner',
+        projects: ['Scripts', 'Data Processing'],
+        tip: 'Learn: Libraries, Data Structures, Automation'
+      },
+    ],
+    programming: [
+      { 
+        name: 'JavaScript', 
+        level: 55, 
+        icon: faJsSquare,
+        description: 'Proficient in ES6+ features, DOM manipulation, and async programming.',
+        experience: 'Intermediate',
+        projects: ['Web Applications', 'Scripts'],
+        tip: 'Master: Async/Await, ES6+ Features, Patterns'
+      },
+      { 
+        name: 'Python', 
+        level: 40, 
+        icon: faPython,
+        description: 'Comfortable with Python for scripting, automation, and basic applications.',
+        experience: 'Beginner/Intermediate',
+        projects: ['Scripts', 'Automation Tools'],
+        tip: 'Learn: Libraries, OOP, Data Structures'
+      },
+      { 
+        name: 'Java', 
+        level: 75, 
+        icon: faJava,
+        description: 'Strong object-oriented programming skills with Java.',
+        experience: 'Intermediate/Advanced',
+        projects: ['University Projects', 'Algorithms'],
+        tip: 'Focus on: Design Patterns, Spring Framework'
+      },
+      { 
+        name: 'C++', 
+        level: 20, 
+        icon: faCode,
+        description: 'Basic understanding of C++ for algorithms and system programming.',
+        experience: 'Beginner',
+        projects: ['Algorithms', 'Learning Projects'],
+        tip: 'Start with: Pointers, Memory Management, OOP'
+      },
+      { 
+        name: 'PHP', 
+        level: 15, 
+        icon: faPhp,
+        description: 'Starting to learn PHP for web development.',
+        experience: 'Just Started',
+        projects: ['Learning Projects'],
+        tip: 'Begin with: Syntax, Forms, Basic Web Apps'
       },
     ],
     tools: [
@@ -142,10 +223,90 @@ const Skills = () => {
         projects: ['Portfolio Design', 'Wireframes'],
         tip: 'Try: Components, Auto Layout, Prototyping'
       },
+      { 
+        name: 'MySQL', 
+        level: 40, 
+        icon: faDatabase,
+        description: 'Basic SQL database management with MySQL.',
+        experience: 'Beginner/Intermediate',
+        projects: ['Database Projects'],
+        tip: 'Learn: SQL Queries, Joins, Normalization'
+      },
+      { 
+        name: 'SQL Server', 
+        level: 5, 
+        icon: faDatabase,
+        description: 'Starting to learn Microsoft SQL Server.',
+        experience: 'Just Started',
+        projects: ['Learning Projects'],
+        tip: 'Begin with: T-SQL Basics, Management Studio'
+      },
+      { 
+        name: 'IntelliJ IDEA', 
+        level: 40, 
+        icon: faTools,
+        description: 'Using IntelliJ for Java development.',
+        experience: 'Intermediate',
+        projects: ['Java Projects'],
+        tip: 'Learn: Debugging, Refactoring, Plugins'
+      },
+      { 
+        name: 'NetBeans', 
+        level: 30, 
+        icon: faTools,
+        description: 'Familiar with NetBeans for Java development.',
+        experience: 'Basic',
+        projects: ['University Projects'],
+        tip: 'Master: Project Management, GUI Builder'
+      },
+      { 
+        name: 'Discord', 
+        level: 80, 
+        icon: faDiscord,
+        description: 'Using Discord for team communication and community engagement.',
+        experience: 'Advanced',
+        projects: ['Team Projects', 'Communities'],
+        tip: 'Explore: Bots, Integrations, Community Management'
+      },
+      { 
+        name: 'Blender', 
+        level: 10, 
+        icon: faPalette,
+        description: 'Starting to learn 3D modeling with Blender.',
+        experience: 'Just Started',
+        projects: ['Learning 3D Modeling'],
+        tip: 'Begin with: Basic Modeling, Texturing, Lighting'
+      },
+      { 
+        name: 'Zoom/Teams', 
+        level: 85, 
+        icon: faVideo,
+        description: 'Proficient with video conferencing tools for remote collaboration.',
+        experience: 'Advanced',
+        projects: ['Remote Meetings', 'Online Presentations'],
+        tip: 'Master: Screen Sharing, Recording, Breakout Rooms'
+      },
+      { 
+        name: 'Microsoft Office', 
+        level: 90, 
+        icon: faMicrosoft,
+        description: 'Advanced skills in Word, Excel, PowerPoint for documentation and analysis.',
+        experience: 'Expert',
+        projects: ['Documentation', 'Presentations', 'Data Analysis'],
+        tip: 'Excel: PivotTables, Formulas, Charts'
+      },
+      { 
+        name: 'Canva', 
+        level: 60, 
+        icon: faPalette,
+        description: 'Creating graphics, presentations, and social media content.',
+        experience: 'Intermediate',
+        projects: ['Social Media Graphics', 'Presentations'],
+        tip: 'Use: Templates, Brand Kits, Animations'
+      },
     ],
   };
 
-  // Animated Skill Bar Component
   const SkillBar = ({ skill }) => {
     const [isVisible, setIsVisible] = useState(false);
     const barRef = useRef(null);
@@ -226,7 +387,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-20 px-4 scroll-mt-16 bg-background-light dark:bg-background-dark transition-colors duration-300">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
 
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-text-primary-light dark:text-text-primary-dark mb-4">
@@ -238,120 +399,178 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Skills Grid - 2x2 layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          {/* Row 1: Frontend & Backend */}
           
           {/* Frontend Skills */}
-          <div className="bg-card-light dark:bg-card-dark rounded-2xl shadow-lg p-6 border border-border-light dark:border-border-dark hover:shadow-xl transition-all duration-300">
-            <div className="flex items-center mb-6">
+          <div className="h-80 bg-card-light dark:bg-card-dark rounded-2xl shadow-lg p-6 border border-border-light dark:border-border-dark hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div className="flex items-center mb-4">
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-4 ${iconBgColorClass}`}>
                 <FontAwesomeIcon icon={faDesktop} className={`text-xl ${primaryColorClass}`} />
               </div>
               <h3 className="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark">Frontend</h3>
             </div>
-            <div className="space-y-4">
-              {skills.frontend.map((skill) => (
-                <div 
-                  key={skill.name} 
-                  className="group relative space-y-2 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
-                  onClick={() => openSkillModal(skill)}
-                >
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center">
-                      <FontAwesomeIcon 
-                        icon={skill.icon} 
-                        className={`mr-3 w-5 h-5 transition-all duration-300 group-hover:scale-110 ${primaryColorClass}`}
-                      />
-                      <span className={`font-medium text-text-primary-light dark:text-text-primary-dark group-hover:${primaryColorClass} transition-colors`}>
-                        {skill.name}
-                      </span>
+            
+            {/* Scrollable skills container */}
+            <div className="flex-1 overflow-y-auto pr-2">
+              <div className="space-y-3">
+                {skills.frontend.map((skill) => (
+                  <div 
+                    key={skill.name} 
+                    className="group relative space-y-1 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
+                    onClick={() => openSkillModal(skill)}
+                  >
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center">
+                        <FontAwesomeIcon 
+                          icon={skill.icon} 
+                          className={`mr-3 w-5 h-5 transition-all duration-300 group-hover:scale-110 ${primaryColorClass}`}
+                        />
+                        <span className={`font-medium text-text-primary-light dark:text-text-primary-dark group-hover:${primaryColorClass} transition-colors`}>
+                          {skill.name}
+                        </span>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-text-secondary-light dark:text-text-secondary-dark font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">
+                          {skill.level}%
+                        </span>
+                        <div className={`w-2 h-2 rounded-full ${primaryBgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                      </div>
                     </div>
-                    <div className="flex items-center">
-                      <span className="text-text-secondary-light dark:text-text-secondary-dark font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">
-                        {skill.level}%
-                      </span>
-                      <div className={`w-2 h-2 rounded-full ${primaryBgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-                    </div>
+                    <SkillBar skill={skill} />
                   </div>
-                  <SkillBar skill={skill} />
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Backend Skills */}
-          <div className="bg-card-light dark:bg-card-dark rounded-2xl shadow-lg p-6 border border-border-light dark:border-border-dark hover:shadow-xl transition-all duration-300">
-            <div className="flex items-center mb-6">
+          <div className="h-80 bg-card-light dark:bg-card-dark rounded-2xl shadow-lg p-6 border border-border-light dark:border-border-dark hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div className="flex items-center mb-4">
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-4 ${iconBgColorClass}`}>
                 <FontAwesomeIcon icon={faServer} className={`text-xl ${primaryColorClass}`} />
               </div>
               <h3 className="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark">Backend</h3>
             </div>
-            <div className="space-y-4">
-              {skills.backend.map((skill) => (
-                <div 
-                  key={skill.name} 
-                  className="group relative space-y-2 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
-                  onClick={() => openSkillModal(skill)}
-                >
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center">
-                      <FontAwesomeIcon 
-                        icon={skill.icon} 
-                        className={`mr-3 w-5 h-5 transition-all duration-300 group-hover:scale-110 ${primaryColorClass}`}
-                      />
-                      <span className={`font-medium text-text-primary-light dark:text-text-primary-dark group-hover:${primaryColorClass} transition-colors`}>
-                        {skill.name}
-                      </span>
+            
+            {/* Scrollable skills container */}
+            <div className="flex-1 overflow-y-auto pr-2">
+              <div className="space-y-3">
+                {skills.backend.map((skill) => (
+                  <div 
+                    key={skill.name} 
+                    className="group relative space-y-1 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
+                    onClick={() => openSkillModal(skill)}
+                  >
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center">
+                        <FontAwesomeIcon 
+                          icon={skill.icon} 
+                          className={`mr-3 w-5 h-5 transition-all duration-300 group-hover:scale-110 ${primaryColorClass}`}
+                        />
+                        <span className={`font-medium text-text-primary-light dark:text-text-primary-dark group-hover:${primaryColorClass} transition-colors`}>
+                          {skill.name}
+                        </span>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-text-secondary-light dark:text-text-secondary-dark font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">
+                          {skill.level}%
+                        </span>
+                        <div className={`w-2 h-2 rounded-full ${primaryBgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                      </div>
                     </div>
-                    <div className="flex items-center">
-                      <span className="text-text-secondary-light dark:text-text-secondary-dark font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">
-                        {skill.level}%
-                      </span>
-                      <div className={`w-2 h-2 rounded-full ${primaryBgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-                    </div>
+                    <SkillBar skill={skill} />
                   </div>
-                  <SkillBar skill={skill} />
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2: Programming & Tools */}
+          
+          {/* Programming Languages */}
+          <div className="h-80 bg-card-light dark:bg-card-dark rounded-2xl shadow-lg p-6 border border-border-light dark:border-border-dark hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div className="flex items-center mb-4">
+              <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-4 ${iconBgColorClass}`}>
+                <FontAwesomeIcon icon={faCode} className={`text-xl ${primaryColorClass}`} />
+              </div>
+              <h3 className="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark">Programming</h3>
+            </div>
+            
+            {/* Scrollable skills container */}
+            <div className="flex-1 overflow-y-auto pr-2">
+              <div className="space-y-3">
+                {skills.programming.map((skill) => (
+                  <div 
+                    key={skill.name} 
+                    className="group relative space-y-1 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
+                    onClick={() => openSkillModal(skill)}
+                  >
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center">
+                        <FontAwesomeIcon 
+                          icon={skill.icon} 
+                          className={`mr-3 w-5 h-5 transition-all duration-300 group-hover:scale-110 ${primaryColorClass}`}
+                        />
+                        <span className={`font-medium text-text-primary-light dark:text-text-primary-dark group-hover:${primaryColorClass} transition-colors`}>
+                          {skill.name}
+                        </span>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-text-secondary-light dark:text-text-secondary-dark font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">
+                          {skill.level}%
+                        </span>
+                        <div className={`w-2 h-2 rounded-full ${primaryBgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                      </div>
+                    </div>
+                    <SkillBar skill={skill} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Tools & Others */}
-          <div className="bg-card-light dark:bg-card-dark rounded-2xl shadow-lg p-6 border border-border-light dark:border-border-dark hover:shadow-xl transition-all duration-300">
-            <div className="flex items-center mb-6">
+          <div className="h-80 bg-card-light dark:bg-card-dark rounded-2xl shadow-lg p-6 border border-border-light dark:border-border-dark hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div className="flex items-center mb-4">
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-4 ${iconBgColorClass}`}>
                 <FontAwesomeIcon icon={faTools} className={`text-xl ${primaryColorClass}`} />
               </div>
-              <h3 className="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark">Tools & Others</h3>
+              <h3 className="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark">Tools</h3>
             </div>
-            <div className="space-y-4">
-              {skills.tools.map((skill) => (
-                <div 
-                  key={skill.name} 
-                  className="group relative space-y-2 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
-                  onClick={() => openSkillModal(skill)}
-                >
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center">
-                      <FontAwesomeIcon 
-                        icon={skill.icon} 
-                        className={`mr-3 w-5 h-5 transition-all duration-300 group-hover:scale-110 ${primaryColorClass}`}
-                      />
-                      <span className={`font-medium text-text-primary-light dark:text-text-primary-dark group-hover:${primaryColorClass} transition-colors`}>
-                        {skill.name}
-                      </span>
+            
+            {/* Scrollable skills container */}
+            <div className="flex-1 overflow-y-auto pr-2">
+              <div className="space-y-3">
+                {skills.tools.map((skill) => (
+                  <div 
+                    key={skill.name} 
+                    className="group relative space-y-1 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
+                    onClick={() => openSkillModal(skill)}
+                  >
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center">
+                        <FontAwesomeIcon 
+                          icon={skill.icon} 
+                          className={`mr-3 w-5 h-5 transition-all duration-300 group-hover:scale-110 ${primaryColorClass}`}
+                        />
+                        <span className={`font-medium text-text-primary-light dark:text-text-primary-dark group-hover:${primaryColorClass} transition-colors`}>
+                          {skill.name}
+                        </span>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-text-secondary-light dark:text-text-secondary-dark font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">
+                          {skill.level}%
+                        </span>
+                        <div className={`w-2 h-2 rounded-full ${primaryBgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                      </div>
                     </div>
-                    <div className="flex items-center">
-                      <span className="text-text-secondary-light dark:text-text-secondary-dark font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">
-                        {skill.level}%
-                      </span>
-                      <div className={`w-2 h-2 rounded-full ${primaryBgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-                    </div>
+                    <SkillBar skill={skill} />
                   </div>
-                  <SkillBar skill={skill} />
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

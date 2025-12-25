@@ -40,18 +40,18 @@ const Navbar = () => {
             {/* Dark Mode Toggle - Updated to circle */}
             <button
               onClick={toggleTheme}
-              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 border border-gray-300 dark:border-gray-700 flex items-center justify-center aspect-square"
+              className="bg-white/50 dark:bg-gray-800/50 transition-colors duration-300 flex items-center justify-center"
               aria-label="Toggle dark mode"
             >
               {isDarkMode ? (
                 <FontAwesomeIcon 
                   icon={faSun} 
-                  className="text-yellow-500 text-lg transition-transform duration-300 hover:rotate-45" 
+                  className="text-yellow-500 text-2xl transition-transform duration-300 hover:rotate-45" 
                 />
               ) : (
                 <FontAwesomeIcon 
                   icon={faMoon} 
-                  className="text-gray-700 text-lg transition-transform duration-300 hover:rotate-45" 
+                  className="text-gray-700 text-2xl transition-transform duration-300 hover:rotate-45" 
                 />
               )}
             </button>
