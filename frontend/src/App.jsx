@@ -11,8 +11,7 @@ import BackToTop from './components/BackToTop';
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F0EEE9] dark:bg-gray-900 transition-colors duration-300 overflow-x-hidden">
-      {/* Snowfall Effect - Optional */}
-      {false && ( // Change to true to enable snowfall
+      {true && ( 
         <Snowfall 
           color="#F7CAC9"  
           snowflakeCount={100}  
