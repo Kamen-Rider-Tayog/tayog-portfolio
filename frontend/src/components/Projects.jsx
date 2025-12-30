@@ -247,7 +247,7 @@ const Projects = () => {
               <div className="flex justify-end mb-4">
                 <motion.div
                   whileHover={{ scale: 1.2, rotate: 5 }}
-                  className="flex items-center text-yellow-500 bg-yellow-50 dark:bg-yellow-900/20 px-2 py-1 rounded-full"
+                  className="flex items-center text-[#F0EEE9] bg-[#FBB6CE] dark:text-[#374151] dark:bg-[#FBB6CE] px-2 py-1 rounded-full"
                 >
                   <FiStar className="mr-1" />
                   <span className="text-sm font-medium">{project.stars}</span>

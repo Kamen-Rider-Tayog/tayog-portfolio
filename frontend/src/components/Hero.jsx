@@ -86,9 +86,9 @@ const Hero = () => {
         {/* Animated Subtitle */}
         <motion.h2
           variants={itemVariants}
-          className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8 font-medium h-12"
+          className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8 font-medium h-12 inline-flex"
         >
-          Aspiring{' '}
+          Aspiring&nbsp;{' '}
           <span className="text-[#169C78] dark:text-[#4ECDC4] font-semibold">
             <Typewriter
               options={{
