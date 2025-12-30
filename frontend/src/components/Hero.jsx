@@ -1,62 +1,232 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import Typewriter from 'typewriter-effect';
 
 const Hero = () => {
+  const heroVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
+
+  const blobVariants = {
+    animate: {
+      x: [0, 30, 0],
+      y: [0, -20, 0],
+      scale: [1, 1.1, 1],
+      transition: {
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const techStack = ['Java', 'Spring Boot', 'React', 'Tailwind CSS', 'Git', 'Vite'];
+
   return (
-    <section className="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center px-4 py-8 bg-background-light dark:bg-background-dark relative overflow-hidden transition-colors duration-300">
+    <section className="min-h-[calc(100vh+25vh)] flex flex-col justify-center items-center px-4 py-8 bg-[#F0EEE9] dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
+      {/* Animated Background Blobs */}
+      <motion.div
+        variants={blobVariants}
+        animate="animate"
+        className="absolute top-20 left-10 w-72 h-72 bg-[#F7CAC9]/20 dark:bg-[#F7CAC9]/10 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+      />
+      <motion.div
+        variants={blobVariants}
+        animate="animate"
+        transition={{ delay: 2 }}
+        className="absolute bottom-20 right-10 w-72 h-72 bg-[#169C78]/10 dark:bg-[#4ECDC4]/10 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+      />
+      <motion.div
+        variants={blobVariants}
+        animate="animate"
+        transition={{ delay: 4 }}
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#169C78]/5 dark:bg-[#4ECDC4]/5 rounded-full mix-blend-multiply filter blur-xl opacity-50"
+      />
 
-      <div className="absolute top-20 left-10 w-72 h-72 bg-secondary-light/20 dark:bg-secondary-dark/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-primary-light/10 dark:bg-primary-dark/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+      <motion.div
+        variants={heroVariants}
+        initial="hidden"
+        animate="visible"
+        className="text-center max-w-4xl relative z-10"
+      >
+        {/* Main Heading */}
+        <motion.h1
+          variants={itemVariants}
+          className="text-5xl md:text-7xl font-bold text-gray-800 dark:text-white mb-6"
+        >
+          Hi, I'm{' '}
+          <motion.span
+            whileHover={{ scale: 1.05 }}
+            className="text-[#169C78] dark:text-[#4ECDC4] inline-block cursor-pointer"
+          >
+            Tayog
+          </motion.span>
+        </motion.h1>
 
-      <div className="text-center max-w-4xl relative z-10">
-        <h1 className="text-5xl md:text-7xl font-bold text-text-primary-light dark:text-text-primary-dark mb-6">
-          Hi, I'm <span className="text-primary-light dark:text-primary-dark hover:text-secondary-light dark:hover:text-secondary-dark transition duration-300 cursor-pointer">Tayog</span>
-        </h1>
-        
-        <h2 className="text-2xl md:text-3xl text-text-secondary-light dark:text-text-secondary-dark mb-8 font-medium">
-          Aspiring <span className="text-primary-light dark:text-primary-dark font-semibold hover:text-secondary-light dark:hover:text-secondary-dark transition duration-300 cursor-pointer">Full Stack Developer</span> 
-        </h2>
-        
-        <p className="text-lg text-text-secondary-light dark:text-text-secondary-dark mb-10 max-w-2xl mx-auto leading-relaxed">
+        {/* Animated Subtitle */}
+        <motion.h2
+          variants={itemVariants}
+          className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8 font-medium h-12"
+        >
+          Aspiring{' '}
+          <span className="text-[#169C78] dark:text-[#4ECDC4] font-semibold">
+            <Typewriter
+              options={{
+                strings: ['Full Stack Developer', 'Spring Boot Developer', 'React Developer', 'Web Developer'],
+                autoStart: true,
+                loop: true,
+                deleteSpeed: 50,
+                delay: 100,
+              }}
+            />
+          </span>
+        </motion.h2>
+
+        {/* Description */}
+        <motion.p
+          variants={itemVariants}
+          className="text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed"
+        >
           Creating modern web applications with clean architecture and responsive design.
-          Currently mastering backend development with 
-          <span className="text-primary-light dark:text-primary-dark font-medium hover:text-secondary-light dark:hover:text-secondary-dark transition duration-300 mx-1">Spring Boot</span> 
-          and frontend with 
-          <span className="text-primary-light dark:text-primary-dark font-medium hover:text-secondary-light dark:hover:text-secondary-dark transition duration-300 ml-1">React </span>and
-          <span className="text-primary-light dark:text-primary-dark font-medium hover:text-secondary-light dark:hover:text-secondary-dark transition duration-300 ml-1">Tailwind</span>.
-        </p>
+          Currently mastering backend development with{' '}
+          <motion.span
+            whileHover={{ scale: 1.1 }}
+            className="text-[#169C78] dark:text-[#4ECDC4] font-medium inline-block cursor-pointer"
+          >
+            Spring Boot
+          </motion.span>{' '}
+          and frontend with{' '}
+          <motion.span
+            whileHover={{ scale: 1.1 }}
+            className="text-[#169C78] dark:text-[#4ECDC4] font-medium inline-block cursor-pointer"
+          >
+            React
+          </motion.span>{' '}
+          and{' '}
+          <motion.span
+            whileHover={{ scale: 1.1 }}
+            className="text-[#169C78] dark:text-[#4ECDC4] font-medium inline-block cursor-pointer"
+          >
+            Tailwind
+          </motion.span>.
+        </motion.p>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <button className="px-8 py-3 bg-primary-light dark:bg-primary-dark text-white font-semibold rounded-lg hover:bg-secondary-light dark:hover:bg-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-3 bg-[#169C78] dark:bg-[#4ECDC4] text-white font-semibold rounded-lg shadow-lg"
+          >
             View Projects
-          </button>
-          <button className="px-8 py-3 bg-card-light dark:bg-card-dark text-text-primary-light dark:text-text-primary-dark font-semibold rounded-lg hover:bg-secondary-light/80 dark:hover:bg-secondary-dark/80 hover:text-text-primary-light dark:hover:text-text-primary-dark border-2 border-primary-light/30 dark:border-primary-dark/30 hover:border-secondary-light dark:hover:border-secondary-dark transition duration-300 shadow hover:shadow-md transform hover:-translate-y-1">
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white font-semibold rounded-lg border-2 border-[#169C78]/30 dark:border-[#4ECDC4]/30 shadow hover:shadow-md"
+          >
             Contact Me
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
-        <div className="inline-block bg-card-light/80 dark:bg-card-dark/80 backdrop-blur-sm rounded-lg px-6 py-3 border border-border-light dark:border-border-dark hover:border-secondary-light dark:hover:border-secondary-dark transition duration-300">
-          <p className="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition duration-300">
-            Currently open to <span className="text-primary-light dark:text-primary-dark font-medium hover:text-secondary-light dark:hover:text-secondary-dark transition duration-300 cursor-pointer">collaboration</span> and 
-            <span className="text-primary-light dark:text-primary-dark font-medium hover:text-secondary-light dark:hover:text-secondary-dark transition duration-300 cursor-pointer"> learning opportunities</span>
+        {/* Current Status */}
+        <motion.div
+          variants={itemVariants}
+          className="inline-block bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg px-6 py-3 border border-gray-200 dark:border-gray-700 mb-12"
+        >
+          <p className="text-gray-600 dark:text-gray-300">
+            Currently open to{' '}
+            <motion.span
+              whileHover={{ scale: 1.1 }}
+              className="text-[#169C78] dark:text-[#4ECDC4] font-medium cursor-pointer"
+            >
+              collaboration
+            </motion.span>{' '}
+            and{' '}
+            <motion.span
+              whileHover={{ scale: 1.1 }}
+              className="text-[#169C78] dark:text-[#4ECDC4] font-medium cursor-pointer"
+            >
+              learning opportunities
+            </motion.span>
           </p>
-        </div>
+        </motion.div>
 
-        {/* Minimal Tech Indicator */}
-        <div className="mt-12">
-          <p className="text-text-secondary-light dark:text-text-secondary-dark text-sm mb-3">Technologies I work with:</p>
+        {/* Tech Stack */}
+        <motion.div
+          variants={itemVariants}
+          className="mt-12"
+        >
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="text-gray-600 dark:text-gray-300 text-sm mb-3"
+          >
+            Technologies I work with:
+          </motion.p>
           <div className="flex flex-wrap justify-center gap-3">
-            {['Java', 'Spring Boot', 'React', 'Tailwind CSS', 'Git', 'Vite'].map((tech) => (
-              <span 
+            {techStack.map((tech, index) => (
+              <motion.span
                 key={tech}
-                className="px-4 py-2 bg-card-light/50 dark:bg-card-dark/50 text-text-primary-light dark:text-text-primary-dark rounded-full text-sm font-medium border border-border-light dark:border-border-dark hover:bg-secondary-light/30 dark:hover:bg-primary-dark/20 hover:text-primary-light dark:hover:text-primary-dark hover:border-secondary-light dark:hover:border-primary-dark transition duration-300"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.2 + index * 0.1 }}
+                whileHover={{ scale: 1.1, y: -5 }}
+                className="px-4 py-2 bg-white/50 dark:bg-gray-800/50 text-gray-800 dark:text-white rounded-full text-sm font-medium border border-gray-200 dark:border-gray-700"
               >
                 {tech}
-              </span>
+              </motion.span>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2 }}
+          className="mt-16"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+            className="flex flex-col items-center text-gray-500 dark:text-gray-400"
+          >
+            <span className="text-sm mb-2">Scroll down</span>
+            <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
+              <motion.div
+                animate={{ y: [0, 12, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+                className="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-1"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

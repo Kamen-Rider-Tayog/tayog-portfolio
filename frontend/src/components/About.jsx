@@ -42,22 +42,18 @@ const About = () => {
   };
 
   return (
-    <div className="py-16 px-4 overflow-hidden"> {/* Added overflow-hidden here */}
+    <div className="py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-6xl mx-auto relative" 
+        className="max-w-6xl mx-auto"
       >
-        {/* Background decorative elements - FIXED VERSION */}
-        <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#169C78]/5 to-[#F7CAC9]/5 dark:from-[#4ECDC4]/5 dark:to-[#F7CAC9]/3 rounded-full blur-2xl -z-10"></div>
-        <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-tr from-[#169C78]/5 to-[#F7CAC9]/5 dark:from-[#4ECDC4]/5 dark:to-[#F7CAC9]/3 rounded-full blur-2xl -z-10"></div>
-        
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-6 md:p-8 lg:p-12 border border-gray-100 dark:border-gray-700 backdrop-blur-sm overflow-hidden" 
+          className="relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-6 md:p-8 lg:p-12 border border-gray-200 dark:border-gray-700"
         >
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <div className="lg:w-2/3">
@@ -67,9 +63,8 @@ const About = () => {
                 transition={{ delay: 0.2 }}
                 className="flex items-center mb-8"
               >
-                <div className="relative">
-                  <div className="w-3 h-10 lg:w-4 lg:h-12 bg-gradient-to-b from-[#169C78] to-[#4ECDC4] dark:from-[#4ECDC4] dark:to-[#169C78] rounded-full mr-3 lg:mr-4"></div>
-                  <div className="absolute inset-0 w-3 h-10 lg:w-4 lg:h-12 bg-gradient-to-b from-[#F7CAC9] to-transparent opacity-50 rounded-full mr-3 lg:mr-4 animate-pulse"></div>
+                <div className="relative mr-3 lg:mr-4">
+                  <div className="w-3 h-10 lg:w-4 lg:h-12 bg-[#169C78] dark:bg-[#4ECDC4] rounded-full"></div>
                 </div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white">
                   About <span className="text-[#169C78] dark:text-[#4ECDC4]">Me</span>
@@ -109,7 +104,7 @@ const About = () => {
                     key={index}
                     variants={itemVariants}
                     whileHover={{ scale: 1.05 }}
-                    className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 p-3 lg:p-4 rounded-xl border border-gray-200 dark:border-gray-700 text-center"
+                    className="bg-white dark:bg-gray-800 p-3 lg:p-4 rounded-xl border border-gray-200 dark:border-gray-700 text-center hover:border-[#169C78] dark:hover:border-[#4ECDC4] transition-colors"
                   >
                     <div className="text-xl lg:text-2xl font-bold text-[#169C78] dark:text-[#4ECDC4]">{stat.value}</div>
                     <div className="text-xs lg:text-sm text-gray-600 dark:text-gray-400 mt-1">{stat.label}</div>
@@ -125,8 +120,8 @@ const About = () => {
                 transition={{ delay: 0.5 }}
                 className="lg:sticky lg:top-8"
               >
-                <div className="bg-gradient-to-br from-[#F7CAC9]/20 to-[#169C78]/10 dark:from-[#F7CAC9]/10 dark:to-[#4ECDC4]/20 p-4 lg:p-6 rounded-2xl border border-[#F7CAC9]/30 dark:border-[#F7CAC9]/20 mb-6 lg:mb-8 transform hover:scale-[1.02] transition-all duration-300">
-                  <div className="text-4xl lg:text-5xl mb-3 lg:mb-4 text-[#169C78] dark:text-[#4ECDC4] animate-bounce">💡</div>
+                <div className="bg-[#F7CAC9]/20 dark:bg-[#4ECDC4]/10 p-4 lg:p-6 rounded-2xl border border-[#F7CAC9]/30 dark:border-[#4ECDC4]/20 mb-6 lg:mb-8 hover:border-[#169C78]/40 dark:hover:border-[#4ECDC4]/40 transition-all duration-300">
+                  <div className="text-4xl lg:text-5xl mb-3 lg:mb-4 text-[#169C78] dark:text-[#4ECDC4]">💡</div>
                   <p className="text-gray-700 dark:text-gray-300 italic text-base lg:text-lg leading-relaxed">
                     "Building the web one component at a time, with a focus on clean code, 
                     performance, and user-centric design."
@@ -144,17 +139,17 @@ const About = () => {
                     <motion.div
                       key={index}
                       variants={itemVariants}
-                      whileHover={{ x: 5, backgroundColor: 'rgba(247, 202, 201, 0.1)' }}
-                      className="flex items-center p-2 lg:p-3 rounded-lg hover:bg-[#F7CAC9]/10 dark:hover:bg-[#F7CAC9]/5 transition-all duration-300 cursor-default group"
+                      whileHover={{ x: 5, backgroundColor: '#F7CAC9' }}
+                      className="flex items-center p-2 lg:p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#169C78] dark:hover:border-[#4ECDC4] transition-all duration-300 cursor-default group"
                     >
-                      <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-[#169C78]/20 to-[#F7CAC9]/20 dark:from-[#4ECDC4]/20 dark:to-[#F7CAC9]/10 rounded-lg flex items-center justify-center mr-3 lg:mr-4 group-hover:scale-110 transition-transform flex-shrink-0">
+                      <div className="w-8 h-8 lg:w-10 lg:h-10 bg-[#169C78]/10 dark:bg-[#4ECDC4]/10 rounded-lg flex items-center justify-center mr-3 lg:mr-4 group-hover:bg-[#169C78]/20 dark:group-hover:bg-[#4ECDC4]/20 transition-colors flex-shrink-0">
                         <span className="text-[#169C78] dark:text-[#4ECDC4] text-base lg:text-lg">
                           {skill.icon}
                         </span>
                       </div>
                       <div className="min-w-0 flex-1">
-                        <div className="font-medium text-gray-800 dark:text-white text-sm lg:text-base truncate">{skill.name}</div>
-                        <div className="text-xs lg:text-sm text-gray-600 dark:text-gray-400 truncate">{skill.description}</div>
+                        <div className="font-medium text-gray-800 dark:text-white text-sm lg:text-base">{skill.name}</div>
+                        <div className="text-xs lg:text-sm text-gray-600 dark:text-gray-400">{skill.description}</div>
                       </div>
                     </motion.div>
                   ))}
@@ -173,7 +168,7 @@ const About = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-5 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-[#169C78] to-[#4ECDC4] dark:from-[#4ECDC4] dark:to-[#169C78] text-white font-medium rounded-full hover:shadow-lg transition-all duration-300 text-sm lg:text-base"
+                className="px-5 lg:px-6 py-2 lg:py-3 bg-[#169C78] dark:bg-[#4ECDC4] text-white font-medium rounded-full hover:bg-[#138463] dark:hover:bg-[#3DB7AD] transition-all duration-300 text-sm lg:text-base shadow-md hover:shadow-lg"
               >
                 Download Resume
               </motion.button>

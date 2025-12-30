@@ -8,16 +8,35 @@
     box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
+html {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
     display: none;
 }
 
-/* Dark mode base styles */
-.dark {
-  color-scheme: dark;
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* Custom animations */
+.scrollable {
+    scrollbar-width: thin;
+    scrollbar-color: #169C78 transparent;
+}
+
+.scrollable::-webkit-scrollbar {
+    display: block;
+    width: 6px;
+}
+
+.dark .scrollable {
+    scrollbar-color: #4ECDC4 transparent;
+}
+
 @layer utilities {
   .animation-delay-2000 {
     animation-delay: 2s;
@@ -34,80 +53,128 @@
   .dark .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
+  
+  .gradient-text {
+    background: linear-gradient(90deg, #169C78, #4ECDC4, #F7CAC9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+  
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  .glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #169C78, #4ECDC4, #F7CAC9);
+    z-index: 9999;
+    transition: width 0.05s ease-out;
+    pointer-events: none;
+  }
+  
+  .scroll-indicator-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #169C78, #4ECDC4);
+    transform-origin: 0%;
+    transform: scaleX(0);
+    z-index: 9998;
+  }
 }
 
-/* Smooth scroll behavior */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+    box-shadow: 0 0 20px rgba(22, 156, 120, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(22, 156, 120, 0.6);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  overflow-x: hidden;
 }
 
-/* Selection color */
+.dark {
+  color-scheme: dark;
+}
+
 ::selection {
-  background-color: rgba(22, 156, 120, 0.3); /* primary-light */
+  background-color: rgba(22, 156, 120, 0.3);
   color: inherit;
 }
 
 .dark ::selection {
-  background-color: rgba(78, 205, 196, 0.3); /* primary-dark */
+  background-color: rgba(78, 205, 196, 0.3);
 }
 
-/* Focus styles for accessibility */
 :focus-visible {
-  outline: 2px solid #169C78; /* primary-light */
+  outline: 2px solid #169C78;
   outline-offset: 2px;
 }
 
 .dark :focus-visible {
-  outline: 2px solid #4ECDC4; /* primary-dark */
+  outline: 2px solid #4ECDC4;
 }
 
-/* Improve image rendering */
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
-/* Custom scrollbar for browsers that support it */
-@media (min-width: 768px) {
-  #skills ::-webkit-scrollbar {
-    display: block;
-    width: 1px;
-  }
-
-  ::-webkit-scrollbar {
-    display: block;
-    width: 5px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 5px;
-  }
-  
-  .dark ::-webkit-scrollbar-track {
-    background: #374151; /* gray-700 */
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #169C78; /* primary-light */
-    border-radius: 5px;
-  }
-  
-  .dark ::-webkit-scrollbar-thumb {
-    background: #4ECDC4; /* primary-dark */
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #138463; /* primary-light darker */
-  }
-  
-  .dark ::-webkit-scrollbar-thumb:hover {
-    background: #3DB7AD; /* primary-dark darker */
-  }
-}
-
-/* Print styles */
 @media print {
   .no-print {
     display: none !important;
@@ -121,5 +188,29 @@ img {
   a {
     color: black !important;
     text-decoration: underline !important;
+  }
+  
+  .float, .pulse-slow, .glow, .gradient-text {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
   }
 }
