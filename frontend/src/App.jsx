@@ -30,7 +30,7 @@ function App() {
 
       <Navbar />
       
-      <main className="flex-grow">
+      <main className="flex-grow pt-24">
         <section id="home" className="scroll-mt-16">
           <Hero />
         </section>

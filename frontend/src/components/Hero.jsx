@@ -43,7 +43,7 @@ const Hero = () => {
   const techStack = ['Java', 'Spring Boot', 'React', 'Tailwind CSS', 'Git', 'Vite'];
 
   return (
-    <section className="min-h-[calc(100vh+25vh)] flex flex-col justify-center items-center px-4 py-8 bg-[#F0EEE9] dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
+    <section className="flex flex-col justify-center items-center px-4 py-8 bg-[#F0EEE9] dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
       {/* Animated Background Blobs */}
       <motion.div
         variants={blobVariants}

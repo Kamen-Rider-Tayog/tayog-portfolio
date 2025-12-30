@@ -121,7 +121,6 @@ const About = () => {
                 className="lg:sticky lg:top-8"
               >
                 <div className="bg-[#F7CAC9]/20 dark:bg-[#4ECDC4]/10 p-4 lg:p-6 rounded-2xl border border-[#F7CAC9]/30 dark:border-[#4ECDC4]/20 mb-6 lg:mb-8 hover:border-[#169C78]/40 dark:hover:border-[#4ECDC4]/40 transition-all duration-300">
-                  <div className="text-4xl lg:text-5xl mb-3 lg:mb-4 text-[#169C78] dark:text-[#4ECDC4]">💡</div>
                   <p className="text-gray-700 dark:text-gray-300 italic text-base lg:text-lg leading-relaxed">
                     "Building the web one component at a time, with a focus on clean code, 
                     performance, and user-centric design."

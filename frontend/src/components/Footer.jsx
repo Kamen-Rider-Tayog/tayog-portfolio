@@ -253,7 +253,7 @@ const Footer = () => {
             >
               <FontAwesomeIcon icon={faHeart} className="text-[#F7CAC9]" />
             </motion.span>
-            by Tayog Basallo
+            by Tayog
           </p>
           <p className="text-white/60 text-sm mt-2">
             All rights reserved
