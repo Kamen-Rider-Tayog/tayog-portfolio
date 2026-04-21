@@ -171,7 +171,7 @@ const Footer = () => {
 
               <div className="flex space-x-4 mt-6">
                 <motion.a
-                  href="#"
+                  href="https://github.com/Kamen-Rider-Tayog"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
